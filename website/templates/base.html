@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="p-3 mb-2 bg-dark text-white">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -16,14 +16,14 @@
     <title>{% block title %}Home{% endblock %} | Danie Nell</title>
   </head>
 
-  <body class="bg-dark text-white">
-    <div class="container bg-dark text-white">
-      <article class="container bg-dark text-white" style="padding-top: 80px">
-        <h1>Danie Nell</h1>
+  <body class="text-white mx-auto w-50 p-3" style="background-color: #110f10">
+    <div class="container">
+      <article class="container" style="padding-top: 80px">
+        <h1 class="font-serif">Danie Nell</h1>
         <div class="nav-line"></div>
       </article>
 
-      <nav class="container navbar navbar-expand-lg navbar-dark">
+      <nav class="container navbar navbar-expand-md navbar-dark">
         <button
           class="navbar-toggler"
           type="button"
@@ -42,9 +42,9 @@
           </div>
         </div>
       </nav>
+      <div class="container pt">{% block content%} {% endblock %}</div>
     </div>
 
-    <div class="container">{% block content%} {% endblock %}</div>
     <script
       src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
       integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
