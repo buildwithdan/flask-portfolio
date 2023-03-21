@@ -19,6 +19,7 @@
   <body class="text-white mx-auto w-50 p-3" style="background-color: #110f10">
     <div class="container">
       <article class="container" style="padding-top: 80px">
+        <img src="{{url_for('static', filename='/Images/flask_logo.png')}}" />
         <h1 class="font-serif">Danie Nell</h1>
         <div class="nav-line"></div>
       </article>
@@ -43,6 +44,9 @@
         </div>
       </nav>
       <div class="container pt">{% block content%} {% endblock %}</div>
+      <small style="display: block; margin-top: 8rem">
+        <div class="time">2023 © Danie Nell</div>
+      </small>
     </div>
 
     <script
