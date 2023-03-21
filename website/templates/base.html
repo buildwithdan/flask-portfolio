@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" class="p-3 mb-2 bg-dark text-white">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+      crossorigin="anonymous" />
+    <title>{% block title %}Home{% endblock %} | Danie Nell</title>
+  </head>
+
+  <body class="bg-dark text-white">
+    <div class="container bg-dark text-white">
+      <article class="container bg-dark text-white" style="padding-top: 80px">
+        <h1>Danie Nell</h1>
+        <div class="nav-line"></div>
+      </article>
+
+      <nav class="container navbar navbar-expand-lg navbar-dark">
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar">
+          <div class="navbar-nav ml-auto">
+            <a href="/" class="nav-item nav-link" id="home">home</a>
+            <a href="/about" class="nav-item nav-link" id="about">about</a>
+            <a href="/blog" class="nav-item nav-link" id="blog">blog</a>
+            <a href="/projects" class="nav-item nav-link" id="projects"
+              >projects</a
+            >
+          </div>
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">{% block content%} {% endblock %}</div>
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"></script>
+    <script
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"></script>
+    <script
+      type="text/javascript"
+      src="{{ url_for('static', filename='index.js') }}"></script>
+  </body>
+</html>
