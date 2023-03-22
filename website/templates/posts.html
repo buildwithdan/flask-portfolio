@@ -1,5 +1,5 @@
 {% extends "base.html" %} {% block title%}Blog{% endblock%} {% block content%}
-<h1 class="text-secondary" align="">Blog</h1>
+<h1 class="text-secondary" align="">Blog Posts</h1>
 <p class="">
   Hey, I'm a Senior Software Engineer at Company. I enjoy working with Next.js
   and crafting beautiful front-end experiences. This portfolio is built with
@@ -8,7 +8,6 @@
 </p>
 
 <p class="">NEXT STEPS: for loop -> through each md page in /blogs</p>
-
 {% for post in posts %}
 <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
   {{ post.title }}
