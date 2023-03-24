@@ -1,4 +1,6 @@
 from flask import Blueprint, render_template
+from pathlib import Path
+import os 
 
 views = Blueprint('views',__name__)
 
@@ -12,7 +14,11 @@ def about():
 
 @views.route('/blog')
 def blog():
-  return render_template("blog.html")
+  p = Path(os.path.join(os.path.dirname(__file__),'content','blog'))
+  blogfiles = p.glob('*.md')
+  posts = [p for p in blogfiles]
+  
+  return render_template("blog.html", posts1=posts)
 
 @views.route('/projects')
 def projects():
