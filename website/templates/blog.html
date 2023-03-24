@@ -9,8 +9,15 @@
 
 <p class="">NEXT STEPS: for loop -> through each md page in /blogs</p>
 
-{% for post in posts %}
-<a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
-  {{ post.title }}
-</a>
-<small>{{ post.date }}</small> {% endfor %} {% endblock %}
+<ul class="list-group">
+  {% for post in posts1 %}
+
+  <a
+    href="#"
+    class="list-group-item list-group-item-action list-group-item-dark px-50"
+    >{{ post.name }}</a
+  >
+  {% endfor %} {% filter markdown %}
+</ul>
+
+##Your Markdown ============= {% endfilter %} {% endblock %}
