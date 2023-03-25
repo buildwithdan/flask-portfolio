@@ -8,16 +8,22 @@
 </p>
 
 <p class="">NEXT STEPS: for loop -> through each md page in /blogs</p>
+{% filter markdown %}## Your Markdown ============= {% endfilter %}
 
-<ul class="list-group">
+<ul class="list-group bg-dark">
+  <li
+    class="list-group-item d-flex justify-content-between align-items-center bg-dark">
+    Cras justo odio
+    <span class="badge badge-dark badge-pill">14 views</span>
+  </li>
   {% for post in posts1 %}
+  <li
+    class="list-group-item d-flex justify-content-between align-items-center bg-dark">
+    <a href="/" class="">{{ post.name }}</a>
+    <span class="badge badge-dark badge-pill">14 views</span>
+  </li>
 
-  <a
-    href="#"
-    class="list-group-item list-group-item-action list-group-item-dark px-50"
-    >{{ post.name }}</a
-  >
-  {% endfor %} {% filter markdown %}
+  {% endfor %}
 </ul>
 
-##Your Markdown ============= {% endfilter %} {% endblock %}
+{% endblock %}
