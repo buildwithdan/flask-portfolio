@@ -14,7 +14,7 @@ def about():
 
 @views.route('/blog')
 def blog():
-  p = Path(os.path.join(os.path.dirname(__file__),'content','blog'))
+  p = Path(os.path.join(os.path.dirname(__file__),'content','blog_posts'))
   blogfiles = p.glob('*.md')
   posts = [p for p in blogfiles]
   
