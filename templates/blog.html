@@ -1,0 +1,13 @@
+{% extends "base.html" %} {% block title%}Blog{% endblock%} {% block content%}
+<h1 class="text-secondary" align="">Blog</h1>
+<p class="">
+  Hey, I'm a Senior Software Engineer at Company. I enjoy working with Next.js
+  and crafting beautiful front-end experiences. This portfolio is built with
+  Next.js and a library called Nextra. It allows you to write Markdown and focus
+  on the content of your portfolio. Deploy your own in a few minutes.
+</p>
+{% for post in posts %}
+<a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
+  {{ post.title }}
+</a>
+<small>{{ post.date }}</small> {% endfor %} {% endblock %}
