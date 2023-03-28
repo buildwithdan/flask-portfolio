@@ -43,5 +43,3 @@ def post(name):
     path = '{}/{}'.format(POST_DIR, name)
     post = flatpages.get_or_404(path)
     return render_template('post.html', post=post)
-
-app.run(debug=True,port=9000)
