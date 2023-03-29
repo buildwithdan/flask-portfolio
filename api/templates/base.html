@@ -15,8 +15,8 @@
       crossorigin="anonymous" />
     <style>
       img {
-        -webkit-filter: grayscale(100%);
-        filter: grayscale(100%);
+          <!-- -webkit-filter: grayscale(100%);
+          -->filter: grayscale(100%);
       }
     </style>
     <title>{% block title %}Home{% endblock %} | Danie Nell</title>
@@ -29,7 +29,7 @@
         style="padding-top: 80px">
         <a href="https://www.danienell.com">
           <img
-            src="https://media.licdn.com/dms/image/C4D03AQH03ouibW0oTg/profile-displayphoto-shrink_200_200/0/1611605120708?e=1684972800&v=beta&t=fCYPisxAczeo-ke8HGVhXTF4lnQ9oQTwG6JgIec50zE"
+            src="{{ url_for('static', filename='images/headshot.jpg') }}"
             class="img-thumbnail rounded-circle"
             alt="Danie Nell"
             width="100"
@@ -50,10 +50,10 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar">
           <div class="navbar-nav ml-auto">
-            <a href="/" class="nav-item nav-link" id="home">home</a>
-            <a href="/about" class="nav-item nav-link" id="about">about</a>
-            <a href="/blog" class="nav-item nav-link" id="blog">blog</a>
-            <a href="/projects" class="nav-item nav-link" id="projects"
+            <a href="/ " class="nav-item nav-link" id="home ">home</a>
+            <a href="/about " class="nav-item nav-link" id="about ">about</a>
+            <a href="/blog " class="nav-item nav-link" id="blog ">blog</a>
+            <a href="/projects " class="nav-item nav-link" id="projects "
               >projects</a
             >
           </div>
@@ -66,19 +66,19 @@
     </div>
 
     <script
-      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
-      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
-      crossorigin="anonymous"></script>
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js "
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN "
+      crossorigin="anonymous "></script>
     <script
-      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
-      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
-      crossorigin="anonymous"></script>
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js "
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q "
+      crossorigin="anonymous "></script>
     <script
-      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
-      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
-      crossorigin="anonymous"></script>
+      src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js "
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl "
+      crossorigin="anonymous "></script>
     <script
-      type="text/javascript"
-      src="{{ url_for('static', filename='index.js') }}"></script>
+      type="text/javascript "
+      src="{{ url_for( 'static', filename='index.js' ) }} "></script>
   </body>
 </html>
