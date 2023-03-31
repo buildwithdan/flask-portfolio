@@ -1,13 +1,24 @@
 {% extends "base.html" %} {% block title%}Blog{% endblock%} {% block content%}
 <h1 class="text-secondary" align="">Blog</h1>
-<p class="">
-  Hey, I'm a Senior Software Engineer at Company. I enjoy working with Next.js
-  and crafting beautiful front-end experiences. This portfolio is built with
-  Next.js and a library called Nextra. It allows you to write Markdown and focus
-  on the content of your portfolio. Deploy your own in a few minutes.
-</p>
-{% for post in posts %}
+<p class="">Hey</p>
+
+<br />
+
+<div class="list-group list-group-flush d-grid gap-3">
+  {% for post in posts %}
+  <a
+    href="{{ url_for('post', name=post.path.replace('posts/', '')) }}"
+    class="list-group-item d-flex justify-content-between align-items-center list-group-item-action text-secondary"
+    style="background-color: #3d3c3f49"
+    >{{ post.title }}
+    <span class="badge badge-pill bg-info text-white">{{ post.date }}</span></a
+  >
+  {% endfor %}
+</div>
+
+<!-- {% for post in posts %}
 <a href="{{ url_for('post', name=post.path.replace('posts/', '')) }}">
   {{ post.title }}
 </a>
-<small>{{ post.date }}</small> {% endfor %} {% endblock %}
+    <small>{{ post.date }}</small> {% endfor %} --->
+{% endblock %}
