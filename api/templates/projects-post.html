@@ -1,0 +1,6 @@
+{% extends "base.html" %} {% block title%}{{ project.title }}{% endblock%} {%
+block content%}
+<h1 class="text-secondary" align="">{{ project.title }}</h1>
+<div class="flexbox"></div>
+<p class="">POST details</p>
+{{ project.html|safe }} {{ project.title }} {{ project.date }} {% endblock %}

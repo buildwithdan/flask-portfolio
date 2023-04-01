@@ -6,7 +6,8 @@ DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
-POST_DIR = 'posts'
+DIR_BLOG_POSTS = 'posts'
+DIR_PROJECTS = 'projects'
 
 
 app = Flask(__name__)
@@ -22,24 +23,25 @@ def home():
 def about():
   return render_template("about.html")
 
-
-@app.route('/projects')
-def projects():
-  return render_template("projects.html")
-
-
-# @app.route('/blog')
-# def blog():
-#   return render_template("blog.html")
-
 @app.route("/blog/")
 def posts():
-    posts = [p for p in flatpages if p.path.startswith(POST_DIR)]
+    posts = [p for p in flatpages if p.path.startswith(DIR_BLOG_POSTS)]
     # posts.sort(key=lambda item:item["date"], reverse=False)
     return render_template('blog.html', posts=posts)
 
 @app.route('/blog/<name>/')
 def post(name):
-    path = '{}/{}'.format(POST_DIR, name)
+    path = '{}/{}'.format(DIR_BLOG_POSTS, name)
     post = flatpages.get_or_404(path)
-    return render_template('post.html', post=post)
+    return render_template('blog-post.html', post=post)
+  
+@app.route('/projects/')
+def projects():
+  projects = [p for p in flatpages if p.path.startswith(DIR_PROJECTS)]
+  return render_template("projects.html", projects=projects)
+
+@app.route('/projects/<name>/')
+def project(name):
+    path = '{}/{}'.format(DIR_PROJECTS, name)
+    project = flatpages.get_or_404(path)
+    return render_template('projects-post.html', project=project)

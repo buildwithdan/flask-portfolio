@@ -1,14 +1,27 @@
 {% extends "base.html" %} {% block title%}Projects{% endblock%} {% block
 content%}
 <h1 class="text-secondary" align="">Projects</h1>
+<p class="">Check out my projects below!</p>
+
 <p class="">
-  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem vitae,
-  placeat fugiat est voluptatum porro, fuga atque omnis laborum assumenda
-  tenetur similique expedita eos earum molestias facere error itaque. Laboriosam
-  aliquid architecto repudiandae consectetur cum beatae numquam fugit natus
-  totam pariatur sunt consequatur autem eaque quaerat optio explicabo,
-  asperiores fuga?
+  Each one represents a unique challenge that I tackled with creativity and
+  passion. I hope they inspire you and spark your imagination.
 </p>
-<ul class="list-group list-group-flush" id="notes">
-  {% endblock %}
-</ul>
+
+<br />
+
+<div class="list-group list-group-flush d-grid gap-3">
+  {% for project in projects %}
+  <a
+    href="{{ url_for('project', name=project.path.replace('projects/', '')) }}"
+    class="list-group-item d-flex justify-content-between align-items-center list-group-item-action text-secondary"
+    style="background-color: #3d3c3f49"
+    >{{ project.title }}
+    <span class="badge badge-pill bg-info text-white"
+      >{{ project.date }}</span
+    ></a
+  >
+  {% endfor %}
+</div>
+
+{% endblock %}
