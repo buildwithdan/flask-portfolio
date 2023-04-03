@@ -15,11 +15,11 @@ content%}
   <div class="col-sm-6 mb-3">
     <div class="card bg-secondary">
       <div class="card-body">
-        <h5 class="card-title d-flex justify-content-between bg-secondary">
-          {{ project.title }}<span class="badge badge-pill bg-info text-white"
-            >{{ project.date }}</span
-          >
-        </h5>
+        <div
+          class="card-title d-flex justify-content-between bg-secondary align-items-center">
+          <h5 class="">{{ project.title }}</h5>
+          <span class="badge badge-pill bg-info">{{ project.date }}</span>
+        </div>
         <p class="card-text">{{ project.shortDesc }}</p>
         <p class="text-warning"><em class="">{{ project.tech }}</em></p>
         <a
