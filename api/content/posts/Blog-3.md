@@ -1,5 +1,5 @@
 title: Blog3_My personal Tech Stack (WIP)
-date: 2022-04-01
+date: 1999-09-09
 published: True
 
 <span style="color:red"> Busy creating the content &#128075; ...</span>
