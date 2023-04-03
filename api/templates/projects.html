@@ -21,9 +21,21 @@ content%}
           >
         </h5>
         <p class="card-text">{{ project.shortDesc }}</p>
-        <p class=""><em class="">{{ project.tech }}</em></p>
-        <a href="{{ project.codeLink }}" class="btn btn-primary">Code</a>
-        <a href="{{ project.webLink }}" class="btn btn-primary">WebLink</a>
+        <p class="text-warning"><em class="">{{ project.tech }}</em></p>
+        <a
+          href="{{ project.codeLink }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+          >Code</a
+        >
+        <a
+          href="{{ project.webLink }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+          >WebLink</a
+        >
       </div>
     </div>
   </div>
