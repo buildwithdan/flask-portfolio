@@ -1,9 +1,7 @@
-title: Markdown Cheat Sheet
+title: Blog1_Markdown Cheat Sheet
 date: 2023-04-01
 
-# Markdown Cheat Sheet
-
-Thanks for visiting [The Markdown Guide](https://www.markdownguide.org)!
+## Markdown Cheat Sheet
 
 This Markdown cheat sheet provides a quick overview of all the Markdown syntax elements. It can’t cover every edge case, so if you need more information about any of these elements, refer to the reference guides for [basic syntax](https://www.markdownguide.org/basic-syntax) and [extended syntax](https://www.markdownguide.org/extended-syntax).
 
@@ -26,6 +24,16 @@ These are the elements outlined in John Gruber’s original design document. All
 ### Italic
 
 _italicized text_
+
+### HTML Emoji needed for Markdown
+
+[Link to all the emoji's](https://www.w3schools.com/charsets/ref_emoji.asp)  
+&#127853;  
+Using &#codefromlink!
+
+### LineBreaks
+
+To create a line break or new line ( < br > ), end a line with two or more spaces, and then type return.
 
 ### Blockquote
 

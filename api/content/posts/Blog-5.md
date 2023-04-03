@@ -1,13 +1,6 @@
-title: Should it be YYYY-MM-DD or YYYY-DD-MM? My Thoughts
-date: 2013-08-27
+title: Blog5_Homelab setup (Part1)
+date: 2023...
 
-American-style dates. I know, I know.
+<span style="color:red"> Busy creating the content &#128075; ...</span>
 
-You can have:
-
-- Lists
-- More Lists
-
-> And block quotes
-
-    And event highlighted code if you indent :)
+![Gif](https://media.tenor.com/jNgKSlUpmkEAAAAC/typing-laptop.gif)
