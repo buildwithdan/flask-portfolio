@@ -13,7 +13,7 @@
 
 ## TODO
 
-- [] Fix the Vercel deploy button
+- [ ] Fix the Vercel deploy button
 - [x] updating blog and projects looping 
 
 more to be added once its identified.
