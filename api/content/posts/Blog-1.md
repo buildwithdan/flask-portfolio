@@ -1,6 +1,7 @@
-title: Blog1_Markdown Cheat Sheet
+title: Markdown Cheat Sheet
 date: 2022-03-30
 published: True
+blog: 1
 
 ## Markdown Cheat Sheet
 
