@@ -1,6 +1,7 @@
 title: Homelab setup (Part1) (WIP)
 date: 2023-04-03
 published: True
+blog: 5
 
 ## My Homelab Setup   
 
