@@ -16,7 +16,6 @@
 - [ ] Fix the Vercel deploy button
 - [x] updating blog and projects looping 
 
-more to be added once its identified.
 
 ## This was setup to use Markdown files for blog and projects posts.
 
