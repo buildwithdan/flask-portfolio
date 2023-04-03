@@ -20,15 +20,13 @@ more to be added once its identified.
 
 ## Running Locally
 
-This application requires Node.js v16.13+.
+This application requires the latest python and flask.
 
 ```bash
-git clone https://github.com/leerob/leerob.io.git
-cd leerob.io
-
+git clone https://github.com/buildwithdan/flask-portfolio.git
+cd flask-portfolio
+flask --app api\index.py run --debug
 ```
-
-Create a `.env` file similar to [`.env.example`](https://github.com/leerob/leerob.io/blob/main/.env.example).
 
 ## Cloning / Forking
 
