@@ -1,4 +1,4 @@
-title: Homelab setup (Part1) (WIP)
+title: Homelab setup (Part1)
 date: 2023-04-03
 published: True
 blog: 5
