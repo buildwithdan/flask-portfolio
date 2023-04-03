@@ -1,6 +1,7 @@
-title: Project2
-date: 2023-04-10
-tech: HTML, JS, ExpressJS
+title: Project1
+shortDesc: Application for sorting through web trafficwieonsdfg
+date: 2023-03-27
+tech: Python, FastAPI
 codeLink: www.github.com
 webLink: www.excluserv.com
 
