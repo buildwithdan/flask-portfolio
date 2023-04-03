@@ -1,6 +1,6 @@
 # Flask-Portfolio website
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fleerob%2Fleerob.io) - To still fix this..
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio) - To still fix this..
 
 # danienell.com
 
@@ -13,6 +13,7 @@
 
 ## TODO
 
+- [] Fix the Vercel deploy button
 - [x] updating blog and projects looping 
 
 more to be added once its identified.
