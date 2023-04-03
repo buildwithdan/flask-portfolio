@@ -30,4 +30,4 @@ flask --app api\index.py run --debug
 
 ## Cloning / Forking
 
-Please review the [license](https://github.com/leerob/leerob.io/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.) by running `pnpm run setup`.
+Please review the [license](https://github.com/buildwithdan/flask-portfolio/blob/simple/LICENSE.md) and remove all of my personal information (resume, blog posts, images, etc.).
