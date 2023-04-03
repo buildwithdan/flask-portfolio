@@ -1,6 +1,6 @@
 # Flask-Portfolio website
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio) - To still fix this..
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio)
 
 # danienell.com
 
@@ -13,7 +13,7 @@
 
 ## TODO
 
-- [ ] Fix the Vercel deploy button
+- [x] Fix the Vercel deploy button
 - [x] updating blog and projects looping 
 
 
