@@ -21,17 +21,17 @@ more to be added once its identified.
 
 If you navigate to api/content you will find the folders for each;   
 Blog posts = [Where .md blog posts should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)   
-Projects = [Where .md projects should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)   
+Projects = [Where .md projects should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/projects)   
 
 ### Your Blog markdown file layout;
 _title_: Blog1_Markdown Cheat Sheet   
 _date_: 2022-03-30   
-[Example](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)   
+[Example](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/content/posts/Blog-1.md?token=GHSAT0AAAAAACAGIQ5MGJYUPQFFRHX2RDR6ZBLBG7A)   
 
 ### Your Project markdown file layout;
 _title_: Blog1_Markdown Cheat Sheet   
 _date_: 2022-03-30   
-[Example](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)   
+[Example](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/content/projects/project-1.md?token=GHSAT0AAAAAACAGIQ5MPUJGDAFDBRJUIJXYZBLBGOQ)   
 
 ## Running Locally
 
