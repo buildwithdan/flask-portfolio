@@ -15,6 +15,7 @@
 
 - [x] Fix the Vercel deploy button
 - [x] updating blog and projects looping 
+- [ ] Creating a docker image for this
 
 
 ## This was setup to use Markdown files for blog and projects posts.
