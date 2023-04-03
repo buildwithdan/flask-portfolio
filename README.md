@@ -1,8 +1,35 @@
-# flask-portfolio
+# Flask-Portfolio website
 
-Template Flask Portfolio to use
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fleerob%2Fleerob.io) - To still fix this..
 
-Still to add:
+# danienell.com
 
-- projects buttons to point directly to the webpages, and open in another tab. = DONE
-- adding to the right of the project buttons locaitons for tech OR maybe as a h3. Prob h3 better. = DONE
+- **Framework**: [Flask](https://flask.palletsprojects.com/en/2.2.x/)
+- **Database**: not applicable
+- **Authentication**: not applicable
+- **Deployment**: [Vercel](https://vercel.com)
+- **Styling**: [Boostrap](https://getbootstrap.com/)
+- **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
+
+## TODO
+
+- [x] updating blog and projects looping 
+
+more to be added once its identified.
+
+
+## Running Locally
+
+This application requires Node.js v16.13+.
+
+```bash
+git clone https://github.com/leerob/leerob.io.git
+cd leerob.io
+
+```
+
+Create a `.env` file similar to [`.env.example`](https://github.com/leerob/leerob.io/blob/main/.env.example).
+
+## Cloning / Forking
+
+Please review the [license](https://github.com/leerob/leerob.io/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.) by running `pnpm run setup`.
