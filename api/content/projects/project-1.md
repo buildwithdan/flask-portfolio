@@ -1,6 +1,9 @@
 title: Project1
+shortDesc: Application for sorting through web traffic
 date: 2023-03-27
 tech: Python, FastAPI
+codeLink: www.github.com
+webLink: www.excluserv.com
 
 American-style dates. I know, I know.
 

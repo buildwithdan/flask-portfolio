@@ -1,6 +1,8 @@
 title: Project2
 date: 2023-04-10
 tech: HTML, JS, ExpressJS
+codeLink: www.github.com
+webLink: www.excluserv.com
 
 My biggest accomplishment of 2022 was not my own, but the collective work of folks on my teams at Vercel. They've chosen to join me on this ambitious journey to make the web faster. I'd like to share the internal Slack message I wrote to celebrate their amazing work:
 
