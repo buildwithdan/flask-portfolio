@@ -18,7 +18,7 @@
 - [ ] Creating a docker image for this
 
 
-## This was setup to use Markdown files for blog and projects posts.
+## Markdown files are used for blog and projects posts.
 
 If you navigate to api/content you will find the folders for each;   
 Blog posts = [Where .md blog posts should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)   
