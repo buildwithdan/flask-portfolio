@@ -26,8 +26,13 @@ def about():
 @app.route("/blog/")
 def posts():
     posts = [p for p in flatpages if p.path.startswith(DIR_BLOG_POSTS)]
-    # posts.sort(key=lambda item:item["date"], reverse=False)
-    return render_template('blog.html', posts=posts)
+    print(posts)
+    for post in posts:
+      print(post.meta)
+    latest = sorted(posts, reverse=True, key=lambda p: getattr(p,"meta").get('date'))
+    print(latest)
+    # posts.sort(key=lambda item:item['date'], reverse=False)
+    return render_template('blog.html', posts=latest)
 
 @app.route('/blog/<name>/')
 def post(name):

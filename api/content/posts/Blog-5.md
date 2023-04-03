@@ -1,5 +1,6 @@
-title: Blog5_Homelab setup (Part1)
-date: 2023...
+title: Blog5_Homelab setup (Part1) (WIP)
+date: 2028-04-01
+published: True
 
 <span style="color:red"> Busy creating the content &#128075; ...</span>
 
