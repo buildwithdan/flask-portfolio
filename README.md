@@ -19,19 +19,19 @@ more to be added once its identified.
 
 ## This was setup to use Markdown files for blog and projects posts.
 
-If you navigate to api/content you will find the folders for each;
-Blog posts = [Where .md blog posts should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)
-Projects = [Where .md projects should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)
+If you navigate to api/content you will find the folders for each;   
+Blog posts = [Where .md blog posts should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)   
+Projects = [Where .md projects should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)   
 
 ### Your Blog markdown file layout;
-_title_: Blog1_Markdown Cheat Sheet
-_date_: 2022-03-30
-[Example](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)
+_title_: Blog1_Markdown Cheat Sheet   
+_date_: 2022-03-30   
+[Example](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)   
 
 ### Your Project markdown file layout;
-_title_: Blog1_Markdown Cheat Sheet
-_date_: 2022-03-30
-[Example](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)
+_title_: Blog1_Markdown Cheat Sheet   
+_date_: 2022-03-30   
+[Example](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)   
 
 ## Running Locally
 
