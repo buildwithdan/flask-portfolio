@@ -1,6 +1,6 @@
 # Flask-Portfolio website
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fleerob%2Fleerob.io) - To still fix this..
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio)
 
 # danienell.com
 
@@ -13,14 +13,33 @@
 
 ## TODO
 
+- [x] Fix the Vercel deploy button
 - [x] updating blog and projects looping 
+- [ ] Creating a docker image for this
 
-more to be added once its identified.
 
+## Markdown files are used for blog and projects posts.   
+You can use https://stackedit.io/ to assist in writing markdown pages.   
+Blog posts = [Where .md blog posts should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)   
+Projects = [Where .md projects should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/projects)   
+
+### Your Blog markdown file layout; [Example](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/content/posts/Blog-1.md?token=GHSAT0AAAAAACAGIQ5MGJYUPQFFRHX2RDR6ZBLBG7A)
+_title_: Blog1_Markdown Cheat Sheet   
+_date_: 2022-03-30   
+   
+
+### Your Project markdown file layout; [Example](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/content/projects/project-1.md?token=GHSAT0AAAAAACAGIQ5MPUJGDAFDBRJUIJXYZBLBGOQ)
+_title_: Personal Portfolio Website   
+_shortDesc_: Creating a portfolio website using Flask (micro-framework), and making it a template for others.   
+_date_: 2023-03-27   
+_tech_: Python, Flask, Bootstrap   
+_codeLink_: https://github.com/buildwithdan/flask-portfolio/   
+_webLink_: https://www.danienell.com/   
+   
 
 ## Running Locally
 
-This application requires the latest python and flask.
+This application requires the latest python and flask to be installed.
 
 ```bash
 git clone https://github.com/buildwithdan/flask-portfolio.git
@@ -30,4 +49,4 @@ flask --app api\index.py run --debug
 
 ## Cloning / Forking
 
-Please review the [license](https://github.com/leerob/leerob.io/blob/main/LICENSE.txt) and remove all of my personal information (resume, blog posts, images, etc.) by running `pnpm run setup`.
+Please review the [license](https://github.com/buildwithdan/flask-portfolio/blob/simple/LICENSE.md) and remove all of my personal information (resume, blog posts, images, etc.).
