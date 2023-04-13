@@ -13,9 +13,11 @@
 
 ## TODO
 
+- [x] Visitors badge added to main page
 - [x] Fix the Vercel deploy button
 - [x] updating blog and projects looping 
 - [ ] Creating a docker image for this
+- [ ] Adding view counter to blog pages
 
 
 ## Markdown files are used for blog and projects posts.   
