@@ -16,7 +16,7 @@
 - [x] Visitors counter badge added to main page
 - [x] Fix the Vercel deploy button
 - [x] updating blog and projects looping
-- [ ] Adding in Published Yes and NO trigger, to keep certain blog postes off.
+- [ ] Adding in Published Yes and No trigger, to keep certain blog posts off.
 - [ ] Creating a docker image for this
 - [ ] Adding view counter to blog pages
 
