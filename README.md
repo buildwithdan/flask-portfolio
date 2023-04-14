@@ -2,13 +2,13 @@
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=buildwithdan.flask-portfolio)   
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio)
 
-# danienell.com
+# Stack
 
 - **Framework**: [Flask](https://flask.palletsprojects.com/en/2.2.x/)
 - **Database**: not applicable
 - **Authentication**: not applicable
 - **Deployment**: [Vercel](https://vercel.com)
-- **Styling**: [Boostrap](https://getbootstrap.com/)
+- **Styling**: [Bootstrap](https://getbootstrap.com/)
 - **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
 
 ## TODO
