@@ -1,5 +1,5 @@
 # Flask-Portfolio website
-
+![visitors](https://visitor-badge.laobi.icu/badge?page_id=buildwithdan.flask-portfolio)
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio)
 
 # danienell.com
