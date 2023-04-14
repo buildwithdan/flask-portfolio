@@ -13,7 +13,7 @@
 
 ## TODO
 
-- [x] Visitors badge added to main page
+- [x] Visitors counter badge added to main page
 - [x] Fix the Vercel deploy button
 - [x] updating blog and projects looping 
 - [ ] Creating a docker image for this
