@@ -25,14 +25,33 @@ def about():
 
 @app.route("/blog/")
 def posts():
+    # Retrieve the posts
     posts = [p for p in flatpages if p.path.startswith(DIR_BLOG_POSTS)]
-    print(posts)
+    print("check1",posts)
+    
+    filtered_posts = []
     for post in posts:
-      print(post.meta)
-    latest = sorted(posts, reverse=True, key=lambda p: getattr(p,"meta").get('date'))
-    print(latest)
-    # posts.sort(key=lambda item:item['date'], reverse=False)
+        published_status = getattr(post, "meta").get('published')
+        print(f"Check2 - Published status for {post.path}: {published_status}")
+        if published_status == True:
+            filtered_posts.append(post)
+    print("check3", filtered_posts)
+    
+    # # Filter the posts with 'published' set to 'yes'
+    # filtered_posts = []
+    # for post in posts:
+    #     if getattr(post, "meta").get('Published') == "True":
+    #         filtered_posts.append(post)
+    
+    # print(filtered_posts)
+
+    # Sort the filtered posts by date
+    latest = sorted(filtered_posts, reverse=True, key=lambda p: getattr(p, "meta").get('date'))
+    print("check4",latest)
+
+    # Render the template with the sorted posts
     return render_template('blog.html', posts=latest)
+
 
 @app.route('/blog/<name>/')
 def post(name):
