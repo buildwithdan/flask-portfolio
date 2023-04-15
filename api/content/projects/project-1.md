@@ -3,4 +3,4 @@ shortDesc: Creating a portfolio website using Flask (micro-framework), and makin
 date: 2023-03-27
 tech: Python, Flask, Bootstrap
 codeLink: https://github.com/buildwithdan/flask-portfolio/
-webLink: https://www.danienell.com/
+webLink: https://flask-portfolio-git-simple-danienell.vercel.app/
