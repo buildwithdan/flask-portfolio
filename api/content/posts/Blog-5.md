@@ -3,7 +3,6 @@ date: 2023-04-03
 published: True
 blog: 5
 
-## My Homelab Setup   
 
 As more and more people work from home, having a homelab setup has become increasingly popular. A homelab can be a great way to learn new technologies, experiment with different software and hardware configurations, and even run personal projects. In this blog post, I'll share my own homelab setup, including the hardware and software I use.
 
