@@ -1,4 +1,4 @@
-title: CRUD tool (WIP)
+title: CRUD tool (Work in progress)
 shortDesc: Application to do simple Create, Read, Update and Delete
 date: 2023-04-15
 tech: Python, Flask....
