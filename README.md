@@ -24,7 +24,7 @@
 
 ## Markdown files are used for blog and projects posts.
 
-You can use https://stackedit.io/ to assist in writing markdown pages.  
+You can use https://markdownlivepreview.com/ to assist in writing markdown pages.  
 Blog posts = [Where .md blog posts should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)  
 Projects = [Where .md projects should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/projects)
 
