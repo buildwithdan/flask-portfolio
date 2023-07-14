@@ -17,6 +17,20 @@
     <link rel="icon" type="image/svg+xml" href="../static/images/favicon.svg" />
 
     <title>{% block title %}Home{% endblock %} | Danie Nell</title>
+    <style>
+      .container-sm {
+        max-width: 70%;
+        margin: auto;
+      }
+
+      @media screen and (max-width: 1200px) {
+        /* Adjust breakpoint as needed */
+        .container-sm {
+          max-width: 90%;
+          /* Adjust this as per your requirement */
+        }
+      }
+    </style>
   </head>
 
   <body class="container text-white" style="background-color: #110f10">
@@ -78,7 +92,12 @@
       type="text/javascript "
       src="{{ url_for( 'static', filename='index.js' ) }} "></script>
     <!-- Start of HubSpot Embed Code -->
-  <script type="text/javascript" id="hs-script-loader" async defer src="//js-eu1.hs-scripts.com/139843457.js"></script>
-<!-- End of HubSpot Embed Code -->
+    <script
+      type="text/javascript"
+      id="hs-script-loader"
+      async
+      defer
+      src="//js-eu1.hs-scripts.com/139843457.js"></script>
+    <!-- End of HubSpot Embed Code -->
   </body>
 </html>
