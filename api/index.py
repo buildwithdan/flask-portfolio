@@ -6,7 +6,7 @@ DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
-DIR_BLOG_POSTS = 'posts'
+DIR_BLOG_POSTS = 'blogs'
 DIR_PROJECTS = 'projects'
 
 
@@ -45,7 +45,7 @@ def posts():
     return render_template('blog.html', posts=latest)
 
 
-@app.route('/blog/<name>/')
+@app.route('/post/<name>/')
 def post(name):
     path = '{}/{}'.format(DIR_BLOG_POSTS, name)
     post = flatpages.get_or_404(path)
