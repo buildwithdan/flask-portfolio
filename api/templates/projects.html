@@ -34,8 +34,17 @@ content%}
           target="_blank"
           rel="noopener noreferrer"
           class="btn btn-primary mx-2"
-          >WebLink</a
+          >Web</a
         >
+        {% if project.localLink %}
+        <a
+          href="{{ project.localLink }}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="btn btn-primary"
+          >Local</a
+        >
+        {% endif %}
       </div>
     </div>
   </div>
