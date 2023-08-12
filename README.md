@@ -26,7 +26,7 @@ Projects = [Where .md projects should be saved](https://github.com/buildwithdan/
 ### Your Blog markdown file layout; [Example](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/content/blogs/Blog-1.md?token=GHSAT0AAAAAACAGIQ5MGJYUPQFFRHX2RDR6ZBLBG7A)
 
 _title_: Blog1*Markdown Cheat Sheet  
-_date*: 2022-03-30   
+_date_: 2022-03-30   
 _published_: No/Yes ====>> This allows you to decide if it should we visible or not yet.   
 
 ### How to Activate Blog comments
