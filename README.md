@@ -14,24 +14,26 @@
 - **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
 
 ## TODO
-
-- [x] Visitors counter badge added to main page
-- [x] Fix the Vercel deploy button
-- [x] updating blog and projects looping
-- [x] Adding in Published Yes and No trigger, to keep certain blog posts off.
-- [x] Adding view counter to blog pages
-- [x] Creating a docker image for this
+- [x] adding comments to blog (done = 2023.08.11)
+- [x] creating config.ini for all variables (done = 2023.08.11)
 
 ## Markdown files are used for blog and projects posts.
 
 You can use https://markdownlivepreview.com/ to assist in writing markdown pages.  
-Blog posts = [Where .md blog posts should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/posts)  
+Blog posts = [Where .md blog posts should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/blogs)  
 Projects = [Where .md projects should be saved](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/projects)
 
-### Your Blog markdown file layout; [Example](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/content/posts/Blog-1.md?token=GHSAT0AAAAAACAGIQ5MGJYUPQFFRHX2RDR6ZBLBG7A)
+### Your Blog markdown file layout; [Example](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/content/blogs/Blog-1.md?token=GHSAT0AAAAAACAGIQ5MGJYUPQFFRHX2RDR6ZBLBG7A)
 
 _title_: Blog1*Markdown Cheat Sheet  
 \_date*: 2022-03-30
+_published_: No/Yes ====>> This allows you to decide if it should we visible or not yet
+
+### How to Activate Blog comments
+Create a new public repo called my-blog-comments.
+Enter your GithubName/my-blog-comments inside the [Config.ini](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/config.ini)
+PS: Test your first post, to which will prompt you to install the app, point it to your 'my-blog-comments' repo.
+Credit to [https://utteranc.es/](https://utteranc.es/)
 
 ### Your Project markdown file layout; [Example](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/content/projects/project-1.md?token=GHSAT0AAAAAACAGIQ5MPUJGDAFDBRJUIJXYZBLBGOQ)
 
@@ -41,6 +43,7 @@ _date_: 2023-03-27
 _tech_: Python, Flask, Bootstrap  
 _codeLink_: https://github.com/buildwithdan/flask-portfolio/  
 _webLink_: https://www.danienell.com/
+
 
 ## Running it Locally for development
 
