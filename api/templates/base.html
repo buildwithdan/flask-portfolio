@@ -16,7 +16,7 @@
 
     <link rel="icon" type="image/svg+xml" href="../static/images/favicon.svg" />
 
-    <title>{% block title %}Home{% endblock %} | Danie Nell</title>
+    <title>{% block title %}Home{% endblock %} | {{your_name}}</title>
     <style>
       .container-sm {
         max-width: 70%;
@@ -38,16 +38,16 @@
       <div
         class="d-flex flex-row align-items-center align-self-center"
         style="padding-top: 80px">
-        <a href="https://danienell.com">
+        <a href="https://{{ domain }}">
           <img
             src="{{ url_for('static', filename='images/headshot.jpg') }}"
             class="img-thumbnail rounded-circle"
-            alt="Danie Nell"
+            alt="{{your_name}}"
             width="100"
             height="100" />
         </a>
 
-        <h1 class="p-3">Danie Nell</h1>
+        <h1 class="p-3">{{your_name}}</h1>
         <div class="nav-line"></div>
       </div>
 
@@ -72,7 +72,7 @@
       </nav>
       <div class="container">{% block content%} {% endblock %}</div>
       <small style="display: block; margin-top: 8rem">
-        <div class="time">2023 © Danie Nell</div>
+        <div class="time">{{current_year}} © {{your_name}}</div>
       </small>
     </div>
 
@@ -91,13 +91,14 @@
     <script
       type="text/javascript "
       src="{{ url_for( 'static', filename='index.js' ) }} "></script>
+
     <!-- Start of HubSpot Embed Code -->
     <script
       type="text/javascript"
       id="hs-script-loader"
       async
       defer
-      src="//js-eu1.hs-scripts.com/139843457.js"></script>
+      src="{{hubspot}}"></script>
     <!-- End of HubSpot Embed Code -->
   </body>
 </html>

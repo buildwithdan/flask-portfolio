@@ -5,5 +5,14 @@ content%}
   <img
     src="https://visitor-badge.laobi.icu/badge?page_id={{ url_for('post', name=post.path.replace('posts/', '')) }}" />
 </p>
-<div class="flexbox"></div>
-{{ post.html|safe }} {% endblock %}
+
+{{ post.html|safe }}
+
+<script
+  src="https://utteranc.es/client.js"
+  repo="{{ blog_comments }}"
+  issue-term="pathname"
+  theme="github-light"
+  crossorigin="anonymous"
+  async></script>
+{% endblock %}
