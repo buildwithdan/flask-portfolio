@@ -1,7 +1,9 @@
 # ✨ Flask Portfolio website
 
 ![visitors](https://visitor-badge.laobi.icu/badge?page_id=buildwithdan.flask-portfolio)
+
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio)
+
 [Docker Image](https://hub.docker.com/r/buildwithdan/flask-portfolio)
 
 ## 🛠️ Stack
@@ -60,6 +62,7 @@ Ensure you have the latest versions of Python and Flask. Then, follow these step
 git clone https://github.com/buildwithdan/flask-portfolio.git
 cd flask-portfolio
 flask --debug --app api.index run
+```
 
 ## 🐳 Docker Deployment
 
@@ -67,15 +70,15 @@ flask --debug --app api.index run
 
 To build the Docker image, use:
 
-\```bash
+```bash
 docker build -t appname .
-\```
+```
 
 ### Docker Run Command
 
 Replace the paths in bold with appropriate local machine paths:
 
-\```bash
+```bash
 docker run -d \
   --name=flask-portfolio \
   -p 5002:5000 \
@@ -83,7 +86,7 @@ docker run -d \
   -v /path/to/projects:/app/api/content/projects \
   --restart unless-stopped \
   buildwithdan/flask-portfolio
-\```
+```
 
 For detailed Docker CLI info, [refer to the official documentation](https://docs.docker.com/engine/reference/commandline/cli/).
 
