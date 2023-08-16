@@ -1,10 +1,25 @@
-# ✨ Flask Portfolio website
+<h1 align="center">Flask Portfolio Template</h1>
+<p align="center">
+  <i>Craft your digital presence with Flask. A comprehensive portfolio template to showcase your work and insights.</i>
+  <br/>
+  <img width="120" src="https://github.com/buildwithdan/flask-portfolio/blob/simple/api/static/images/flask.png" />
+  <br/>
+  <b><a href="http://danienell.com">User Showcase</a></b> | <b><a href="https://hub.docker.com/r/buildwithdan/flask-portfolio">Docker Image</a></b> | <b><a href="https://github.com/buildwithdan/flask-portfolio/blob/simple/LICENSE.md">License</a></b>
+  <br/><br/>
+  <a href="https://visitor-badge.laobi.icu/badge?page_id=buildwithdan.flask-portfolio">
+    <img src="https://visitor-badge.laobi.icu/badge?page_id=buildwithdan.flask-portfolio" alt="Visitor Badge">
+  </a>
+  <a href="https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio">
+    <img src="https://vercel.com/button" alt="Deploy with Vercel">
+  </a>
+  <a href="https://github.com/buildwithdan/flask-portfolio/blob/simple/LICENSE.md">
+    <img src="https://img.shields.io/badge/License-MIT-0aa8d2?logo=opensourceinitiative&logoColor=fff" alt="License MIT">
+  </a>
+  <a href="https://hub.docker.com/r/buildwithdan/flask-portfolio">
+    <img src="https://img.shields.io/docker/pulls/buildwithdan/flask-portfolio?logo=docker&color=0aa8d2&logoColor=fff" alt="Docker Pulls">
+  </a>
+</p>
 
-![visitors](https://visitor-badge.laobi.icu/badge?page_id=buildwithdan.flask-portfolio)
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio)
-
-[Docker Image](https://hub.docker.com/r/buildwithdan/flask-portfolio)
 
 ## 🛠️ Stack
 
