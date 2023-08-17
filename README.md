@@ -76,7 +76,7 @@ Ensure you have the latest versions of Python and Flask. Then, follow these step
 ```bash
 git clone https://github.com/buildwithdan/flask-portfolio.git
 cd flask-portfolio
-flask --debug --app api.index run
+flask --debug --app api/index.py run
 ```
 
 ## 🐳 Docker Deployment
