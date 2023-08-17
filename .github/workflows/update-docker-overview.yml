@@ -3,29 +3,18 @@ name: Update Docker Hub Overview with README
 on:
   push:
     branches:
-      - simple # Trigger the workflow on push to the simple branch
+      - simple
 
 jobs:
   update-overview:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout repository
+      - name: Checkout
         uses: actions/checkout@v2
 
-      - name: Read README
-        id: read-readme
-        run: |
-          content=$(cat README.md)
-          echo "::set-output name=readme::$content"
-
-      - name: Update Docker overview
-        run: |
-          REPO_NAME="flask-portfolio"
-          USER_NAME="${{ secrets.DOCKER_HUB_USERNAME }}"
-          
-          curl -s --user "$USER_NAME:${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}" \
-            -X PATCH \
-            -H "Content-Type: application/json" \
-            -d "{\"full_description\": \"${{ steps.read-readme.outputs.readme }}\"}" \
-            "https://hub.docker.com/v2/repositories/$USER_NAME/$REPO_NAME/"
+      - name: Update Docker Hub repo description
+        uses: peter-evans/dockerhub-description@v3
+        with:
+          username: ${{ secrets.DOCKERHUB_USERNAME }}
+          password: ${{ secrets.DOCKERHUB_TOKEN }}
+          repository: buildwithdan/flask-portfolio
