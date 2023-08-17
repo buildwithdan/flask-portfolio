@@ -6,7 +6,7 @@ on:
       - simple
     paths:
       - README.md
-      - .github/workflows/update-docker-description.yml
+      - .github/workflows/update-docker-overview.yml
 
 jobs:
   dockerHubDescription:
