@@ -2,7 +2,7 @@
 <p align="center">
   <i>Craft your digital presence with Flask. A comprehensive portfolio template to showcase your work and insights.</i>
   <br/>
-  <img width="120" src="https://github.com/buildwithdan/flask-portfolio/blob/simple/api/static/images/flask.png" />
+  <img width="120" src="https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/static/images/flask.png" />
   <br/>
   <b><a href="http://danienell.com">User Showcase</a></b> | <b><a href="https://hub.docker.com/r/buildwithdan/flask-portfolio">Docker Image</a></b> | <b><a href="https://github.com/buildwithdan/flask-portfolio/blob/simple/LICENSE.md">License</a></b>
   <br/><br/>
