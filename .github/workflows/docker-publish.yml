@@ -2,12 +2,15 @@ name: Build and Publish Docker Image
 
 on:
   push:
+    paths-ignore:
+      - 'README.md'
     branches:
       - simple # Trigger the workflow on push to the main branch
   # Optionally, you can also add the following lines to trigger the workflow on pull requests
   # pull_request:
   #   branches:
   #     - main
+  
 
 jobs:
   build-and-publish:
