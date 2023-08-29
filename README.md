@@ -91,7 +91,10 @@ docker build -t appname .
 
 ### Docker Run Command
 
-Replace the paths in bold with appropriate local machine paths:
+Replace the paths in red with the path to your own local machine folders you created:   
+<span style="color:red">/path/to/blogs:</span>/app/api/content/posts \
+
+-v /path/to/projects:/app/api/content/projects \
 
 ```bash
 docker run -d \
