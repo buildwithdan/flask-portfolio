@@ -91,17 +91,27 @@ docker build -t appname .
 
 ### Docker Run Command
 
-Replace the paths in red with the path to your own local machine folders you created:   
-<span style="color:red">/path/to/blogs:</span>/app/api/content/posts \
-
--v /path/to/projects:/app/api/content/projects \
+Replace the following paths to your own local machine folders you created, to allow docker to use your own markdown files:  
+"/path/to/blogs" 
+"/path/to/projects"
 
 ```bash
 docker run -d \
   --name=flask-portfolio \
   -p 5002:5000 \
-  -v /path/to/blogs:/app/api/content/posts \
+  -v /path/to/blogs:/app/api/content/blogs \
   -v /path/to/projects:/app/api/content/projects \
+  --restart unless-stopped \
+  buildwithdan/flask-portfolio
+```
+
+As example:
+```bash
+docker run -d \
+  --name=flask-portfolio \
+  -p 5002:5000 \
+  -v /home/root/website/blogs:/app/api/content/blogs \
+  -v /home/root/website/projects:/app/api/content/projects \
   --restart unless-stopped \
   buildwithdan/flask-portfolio
 ```
