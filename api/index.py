@@ -86,7 +86,12 @@ def post(name):
 @app.route('/projects/')
 def projects():
   projects = [p for p in flatpages if p.path.startswith(DIR_PROJECTS)]
-  return render_template("projects.html", projects=projects)
+  # Sort the filtered posts by date
+  latest = sorted(projects, reverse=True, key=lambda p: getattr(p, "meta").get('date'))
+
+  # Render the template with the sorted projects
+  return render_template('projects.html', projects=latest)
+
 
 @app.route('/projects/<name>/')
 def project(name):
