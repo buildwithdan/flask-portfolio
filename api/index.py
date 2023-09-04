@@ -1,8 +1,10 @@
-from flask import Flask, render_template, url_for
+from flask import Flask, render_template, url_for, request
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 from datetime import datetime
 import configparser
+import os
+import re
 
 DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
@@ -98,3 +100,40 @@ def project(name):
     path = '{}/{}'.format(DIR_PROJECTS, name)
     project = flatpages.get_or_404(path)
     return render_template('projects-post.html', project=project)
+
+# testing the search function for blogs
+
+@app.route('/blog/search', methods=['POST'])
+
+def search_blog():
+    query = request.form.get('query')
+    if not query:  # If the search query is empty
+        posts = get_latest_posts(10)  # Get the last 10 posts
+    else:
+        posts = search_posts(query)
+    return render_template('blog.html', posts=posts, query=query)
+  
+def search_posts(query):
+    """Search through all flatpage blog posts and return posts that match the query."""
+    results = []
+    
+    posts = [p for p in flatpages if p.path.startswith(DIR_BLOG_POSTS)]
+    
+    for post in posts:
+        published_status = getattr(post, "meta").get('published')
+        if published_status == True:
+            content_text = post.body
+            if query.lower() in content_text.lower():
+                results.append(post)
+    
+    return results
+
+
+
+def get_latest_posts(limit=10):
+    """Retrieve the latest 'limit' blog posts."""
+    posts = [p for p in flatpages if p.path.startswith(DIR_BLOG_POSTS)]
+    filtered_posts = [post for post in posts if getattr(post, "meta").get('published') == True]
+    latest = sorted(filtered_posts, reverse=True, key=lambda p: getattr(p, "meta").get('date'))
+    return latest[:limit]
+

@@ -1,7 +1,6 @@
 title: Everyday Tech for Coding, Music, and Beyond
 date: 2023-06-20
 published: True
-Blog: 3
 
 In this post, I'm sharing the tech setup that supports my everyday activities from coding to listening to music.
 
