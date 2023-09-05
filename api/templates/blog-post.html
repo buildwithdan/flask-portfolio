@@ -1,7 +1,9 @@
 {% extends "base.html" %} {% block title%}{{ post.title }}{% endblock%} {% block
 content%}
 <h1 class="text-secondary" align="">{{ post.title }}</h1>
+
 <p>
+  <a class="btn btn-primary" href="/blog" role="button">Back</a>
   <img
     src="https://visitor-badge.laobi.icu/badge?page_id={{ url_for('post', name=post.path.replace('posts/', '')) }}" />
 </p>
