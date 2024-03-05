@@ -11,4 +11,4 @@ Markdown==3.4.3
 MarkupSafe==2.1.2
 PyYAML==6.0
 six==1.16.0
-Werkzeug==2.3.7
+Werkzeug==3.0.1
