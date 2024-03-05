@@ -17,4 +17,4 @@ COPY . .
 EXPOSE 5000
 
 # Start the application
-CMD ["flask", "--app", "api.index", "run", "--host=0.0.0.0", "--port=5000"]
+CMD ["flask", "--app", "api.index", "run", "--host=0.0.0.0", "--port=6000"]
