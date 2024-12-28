@@ -33,8 +33,9 @@
     </style>
   </head>
 
-  <body class="container text-white" style="background-color: #3d3d3d">
-    <div class="container-sm">
+  <body class="container text-white" style="background-color: #0e1c23">
+    <div class="container-sm
+    ">
       <div
         class="d-flex flex-row align-items-center align-self-center"
         style="padding-top: 80px">
@@ -61,19 +62,19 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar">
           <div class="navbar-nav ml-auto">
-            <a href="/ " class="nav-item nav-link" id="home ">home</a>
-            <a href="https://rxresu.me/dnell.personal/danienellcom" class="nav-item nav-link" id="resume ">resume</a>
+            <a href="/ " class="nav-item nav-link text-primary" id="home ">home</a>
+            <a href="https://rxresu.me/ayohbami4/it-systems-support" class="nav-item nav-link text-primary" id="resume ">resume</a>
             <!-- <a href="/about " class="nav-item nav-link" id="about ">about</a> -->
-            <a href="/projects " class="nav-item nav-link" id="projects "
+            <a href="/projects " class="nav-item nav-link text-primary" id="projects "
               >projects</a
             >
-            <a href="/blog " class="nav-item nav-link" id="blog ">blog</a>
+            <!--<a href="/blog " class="nav-item nav-link" id="blog ">blog</a>-->
           </div>
         </div>
       </nav>
       <div class="container">{% block content%} {% endblock %}</div>
       <small style="display: block; margin-top: 8rem">
-        <div class="time text-secondary mr-3 text-right">
+        <div class="time text-primary mr-3 text-right">
           {{current_year}} © {{your_name}}
         </div>
       </small>

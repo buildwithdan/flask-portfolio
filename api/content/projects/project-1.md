@@ -1,8 +1,8 @@
-title: Personal Portfolio Website
-shortDesc: Creating a portfolio website using Flask (micro-framework), and making it a template for others.
-date: 2023-03-27
-tech: Python, Flask, Bootstrap, Docker
-codeLink: https://github.com/buildwithdan/flask-portfolio/
-webHost: https://danienell.com/
-selfHost: https://local.danienell.com/
-dockerLink: https://hub.docker.com/r/buildwithdan/flask-portfolio
+title: Budject Tracking App
+shortDesc: Creating a python script to track budget investment and expenditures
+date: 2024-12-26
+tech: Python
+codeLink: https://github.com/ayohbami/Budget_app.git
+webHost: 
+selfHost: 
+dockerLink: 

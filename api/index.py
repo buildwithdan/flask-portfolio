@@ -10,7 +10,7 @@ DEBUG = True
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
-DIR_BLOG_POSTS = 'blogs'
+#DIR_BLOG_POSTS = 'blogs'
 DIR_PROJECTS = 'projects'
 
 
@@ -136,7 +136,7 @@ def search_posts(query):
 
 
 
-def get_latest_posts(limit=10):
+#def get_latest_posts(limit=10):
     """Retrieve the latest 'limit' blog posts."""
     posts = [p for p in flatpages if p.path.startswith(DIR_BLOG_POSTS)]
     filtered_posts = [post for post in posts if getattr(post, "meta").get('published') == True]
