@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   flask-portfolio:
-    image: buildwithdan/flask-portfolio:latest
+    image: flaskportfolio:latest
     ports:
       - "6001:6001"
     volumes:
