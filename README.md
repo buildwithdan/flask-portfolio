@@ -25,8 +25,8 @@
 
 - **Framework**: [Flask](https://flask.palletsprojects.com/en/2.2.x/)
 - **Styling**: [Bootstrap](https://getbootstrap.com/)
-<!-- - **Deployment**: [Vercel](https://vercel.com) -->
-- **Analytics**: [Vercel Analytics](https://vercel.com/analytics)
+- **Deployment**: [Vercel](https://vercel.com)
+<!-- - **Analytics**: [Vercel Analytics](https://vercel.com/analytics) -->
 
 ## 🗂️ Directory & Configuration
 
@@ -45,6 +45,7 @@ By populating this file, you enable the automatic update of the entire Flask app
 
 - [x] Add comments to the blog (completed: 2023.08.11)
 - [x] Create `config.ini` for all variables (completed: 2023.08.11)
+- [x] Deploy on Vercel again (completed 2025.01.20)
 
 ## 📝 Using Markdown for Blog and Project Posts
 
@@ -98,7 +99,7 @@ Replace the following paths to your own local machine folders you created, to al
 ```bash
 docker run -d \
   --name=flask-portfolio \
-  -p 5002:5000 \
+  -p 6001:5000 \
   -v /path/to/blogs:/app/api/content/blogs \
   -v /path/to/projects:/app/api/content/projects \
   --restart unless-stopped \
@@ -109,7 +110,7 @@ As example:
 ```bash
 docker run -d \
   --name=flask-portfolio \
-  -p 5002:5000 \
+  -p 6001:5000 \
   -v /home/root/website/blogs:/app/api/content/blogs \
   -v /home/root/website/projects:/app/api/content/projects \
   --restart unless-stopped \
