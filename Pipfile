@@ -20,7 +20,7 @@ packaging = "==24.0"
 pyyaml = "==6.0"
 six = "==1.16.0"
 werkzeug = "==3.0.1"
-zipp = "==3.17.0"
+zipp = "==3.19.1"
 
 [requires]
 python_version = "3.9"
