@@ -19,7 +19,7 @@ markupsafe = "==2.1.2"
 packaging = "==24.0"
 pyyaml = "==6.0"
 six = "==1.16.0"
-werkzeug = "==3.0.1"
+werkzeug = "==3.0.3"
 zipp = "==3.17.0"
 
 [requires]
