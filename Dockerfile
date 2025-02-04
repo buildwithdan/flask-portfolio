@@ -22,4 +22,4 @@ EXPOSE 6001
 # Start the application using pipenv to ensure the correct Python environment
 # Run Flask in debug mode with specified app entry point
 
-CMD ["pipenv", "run", "flask", "--debug", "--app", "api/index.py", "run", "--host=0.0.0.0", "--port=6001"]
+CMD ["pipenv", "run", "flask", "--debug", "--app", "api/index.py", "run", "--host=0.0.0.0", "--port=80"]

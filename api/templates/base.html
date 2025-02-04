@@ -42,7 +42,7 @@
         <a href="https://{{ domain }}">
           <img
             src="{{ url_for('static', filename='images/headshot-v2.jpg') }}"
-            class="img-thumbnail rounded-circle"
+            class="img-thumbnail"
             alt="{{your_name}}"
             width="100"
             height="100" />
@@ -53,6 +53,7 @@
       </div>
 
       <nav class="container navbar navbar-expand navbar-dark">
+        <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}" />
         <button
           class="navbar-toggler"
           type="button"
@@ -63,18 +64,17 @@
         <div class="collapse navbar-collapse" id="navbar">
           <div class="navbar-nav ml-auto">
             <a href="/ " class="nav-item nav-link text-primary" id="home ">home</a>
-            <a href="https://rxresu.me/ayohbami4/it-systems-support" class="nav-item nav-link text-primary" id="resume ">resume</a>
-            <!-- <a href="/about " class="nav-item nav-link" id="about ">about</a> -->
-            <a href="/projects " class="nav-item nav-link text-primary" id="projects "
-              >projects</a
-            >
+            <a href="https://rxresu.me/ayohbami4/it-systems-support" class="nav-item nav-link text-primary" id="resume " target="_blank">resume</a>
+            <a href="/about " class="nav-item nav-link text-primary" id="about ">about</a>
+            <a href="/projects " class="nav-item nav-link text-primary" id="projects ">projects</a>
+            <a href="/gallery " class="nav-item nav-link text-primary" id="gallery ">gallery</a>
             <!--<a href="/blog " class="nav-item nav-link" id="blog ">blog</a>-->
           </div>
         </div>
       </nav>
       <div class="container">{% block content%} {% endblock %}</div>
       <small style="display: block; margin-top: 8rem">
-        <div class="time text-primary mr-3 text-right">
+        <div class="time text-info mr-3 text-right">
           {{current_year}} © {{your_name}}
         </div>
       </small>
