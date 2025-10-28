@@ -1,0 +1,7 @@
+{
+  "name": "flask-portfolio",
+  "private": true,
+  "engines": {
+    "node": "22.x"
+  }
+}
