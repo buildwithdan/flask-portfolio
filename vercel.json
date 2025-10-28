@@ -1,12 +1,15 @@
 {
     "version": 2,
+    "framework": null,
+    "installCommand": "pip install -r requirements.txt",
     "functions": {
-      "api/*.py": {
+      "api/index.py": {
         "runtime": "python3.11",
         "includeFiles": "api/**/*"
       }
     },
-    "routes": [
-      { "src": "/(.*)", "dest": "/api/index.py" }
+    "rewrites": [
+      { "source": "/static/(.*)", "destination": "/api/static/$1" },
+      { "source": "/(.*)", "destination": "/api/index.py" }
     ]
   }

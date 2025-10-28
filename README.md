@@ -47,6 +47,12 @@ Deploy the portfolio without leaving your browser:
 
 > ℹ️ **Tip:** If no environment variable is supplied, the value is automatically read from `api/config.ini`. This makes it easy to keep sensitive data out of Git.
 
+### Vercel runtime configuration
+
+- The Python serverless function lives in `api/index.py` and is bundled with the entire `api/` directory through `includeFiles`, ensuring templates, static assets, and Markdown content are available at runtime.
+- `vercel.json` pins the runtime to Python&nbsp;3.11 and disables Node framework auto-detection so the deployment always uses the correct interpreter.
+- Vercel installs dependencies directly from `requirements.txt` during the build; keep this file up to date whenever you add a new library.
+
 ## 🛠️ Stack
 
 - **Framework**: [Flask](https://flask.palletsprojects.com/en/2.2.x/)
