@@ -6,12 +6,7 @@
     "functions": {
       "api/*.py": {
         "runtime": "python3.11",
-        "includeFiles": [
-          "api/content/**",
-          "api/templates/**",
-          "api/static/**",
-          "api/config.ini"
-        ]
+        "includeFiles": "api/**/*"
       }
     },
     "routes": [
