@@ -3,6 +3,17 @@
     "builds": [
       { "src": "api/index.py", "use": "@vercel/python" }
     ],
+    "functions": {
+      "api/*.py": {
+        "runtime": "python3.11",
+        "includeFiles": [
+          "api/content/**",
+          "api/templates/**",
+          "api/static/**",
+          "api/config.ini"
+        ]
+      }
+    },
     "routes": [
       { "src": "/(.*)", "dest": "/api/index.py" }
     ]

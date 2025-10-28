@@ -21,9 +21,31 @@
 </p>
 
 <p align="center">
-  
-  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/import?repository-url=https://github.com/buildwithdan/flask-portfolio)
+
+  [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio&project-name=flask-portfolio&repository-name=flask-portfolio)
 </p>
+
+## ☁️ One-click Vercel deployment
+
+Deploy the portfolio without leaving your browser:
+
+1. Click the **Deploy with Vercel** button above.
+2. When prompted, keep the default project settings or customise the slug.
+3. Add the optional environment variables below to override values from `config.ini`.
+4. Ship it! Your Flask app is available globally in ~60 seconds.
+
+| Variable | Purpose |
+| --- | --- |
+| `SITE_DOMAIN` | Primary domain for canonical URLs |
+| `SITE_EMAIL` | Email address displayed in the footer |
+| `SITE_YOUR_NAME` | The display name used across the site |
+| `SITE_GITHUB` | GitHub profile link |
+| `SITE_BLOG_COMMENTS` | Repo slug for [utteranc.es](https://utteranc.es/) comments |
+| `SITE_HUBSPOT` | HubSpot chatflow URL |
+| `SITE_LINKEDIN` | LinkedIn profile |
+| `SITE_TWITTER` | Twitter/X profile |
+
+> ℹ️ **Tip:** If no environment variable is supplied, the value is automatically read from `api/config.ini`. This makes it easy to keep sensitive data out of Git.
 
 ## 🛠️ Stack
 
@@ -81,6 +103,8 @@ Ensure you have the latest versions of Python and Flask. Then, follow these step
 ```bash
 git clone https://github.com/buildwithdan/flask-portfolio.git
 cd flask-portfolio
+python -m venv .venv && source .venv/bin/activate
+pip install -r requirements.txt
 flask --debug --app api/index.py run
 ```
 

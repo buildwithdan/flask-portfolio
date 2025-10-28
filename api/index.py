@@ -2,16 +2,39 @@ from flask import Flask, render_template, url_for, request
 from flask_flatpages import FlatPages
 from flask_frozen import Freezer
 from datetime import datetime
+from functools import lru_cache
+from pathlib import Path
 import configparser
 import os
 import re
 
-DEBUG = True
+
+def _truthy(value: str | None) -> bool:
+    if value is None:
+        return False
+    return value.lower() in {"1", "true", "t", "yes", "y"}
+
+
+DEBUG = _truthy(os.getenv("FLASK_DEBUG", "false"))
 FLATPAGES_AUTO_RELOAD = DEBUG
 FLATPAGES_EXTENSION = '.md'
 FLATPAGES_ROOT = 'content'
 DIR_BLOG_POSTS = 'blogs'
 DIR_PROJECTS = 'projects'
+
+
+CONFIG_KEYS = (
+    'domain',
+    'email',
+    'your_name',
+    'github',
+    'blog_comments',
+    'hubspot',
+    'linkedin',
+    'twitter',
+)
+CONFIG_SECTION = 'configs'
+CONFIG_FILE = Path(os.getenv('SITE_CONFIG_PATH', Path(__file__).resolve().parent / 'config.ini'))
 
 
 app = Flask(__name__)
@@ -24,30 +47,10 @@ app.config.from_object(__name__)
 # this context processors allows the below variables to be used in all templates, and you dont need to define it in each.
 @app.context_processor
 def inject_global_variables():
-    config = configparser.ConfigParser()
-    config.read('api/config.ini')
-
-    # Access the variables in the "configs" section
-    domain = config['configs']['domain']
-    email = config['configs']['email']
-    your_name = config['configs']['your_name']
-    github = config['configs']['github']
-    blog_comments = config['configs']['blog_comments']
-    hubspot = config['configs']['hubspot']
-    linkedin = config['configs']['linkedin']
-    twitter = config['configs']['twitter']
-    current_year = datetime.now().year
-
+    site_config = _get_site_config()
     return {
-        'domain': domain,
-        'email': email,
-        'your_name': your_name,
-        'github': github,
-        'blog_comments': blog_comments,
-        'hubspot': hubspot,
-        'linkedin': linkedin,
-        'twitter': twitter,
-        'current_year': current_year
+        **site_config,
+        'current_year': datetime.now().year,
     }
 
 
@@ -122,7 +125,7 @@ def search_blog():
 def search_posts(query):
     """Search through all flatpage blog posts and return posts that match the query."""
     results = []
-    
+
     posts = [p for p in flatpages if p.path.startswith(DIR_BLOG_POSTS)]
     
     for post in posts:
@@ -142,6 +145,28 @@ def get_latest_posts(limit=10):
     filtered_posts = [post for post in posts if getattr(post, "meta").get('published') == True]
     latest = sorted(filtered_posts, reverse=True, key=lambda p: getattr(p, "meta").get('date'))
     return latest[:limit]
+
+
+@lru_cache(maxsize=1)
+def _load_config_from_file():
+    config = configparser.ConfigParser()
+    if CONFIG_FILE.exists():
+        config.read(CONFIG_FILE, encoding='utf-8')
+    if config.has_section(CONFIG_SECTION):
+        return dict(config.items(CONFIG_SECTION))
+    return {}
+
+
+def _get_site_config():
+    if DEBUG:
+        _load_config_from_file.cache_clear()
+
+    file_config = _load_config_from_file()
+    resolved = {}
+    for key in CONFIG_KEYS:
+        env_key = f"SITE_{key.upper()}"
+        resolved[key] = os.getenv(env_key, file_config.get(key, '')).strip()
+    return resolved
 
 # if __name__ == "__main__":
 #     app.run(host='0.0.0.0', port=6000)
