@@ -1,0 +1,20 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import BlogCard from '../../components/BlogCard.astro';
+import { getCollection } from 'astro:content';
+
+const posts = (await getCollection('blog'))
+    .filter(post => post.data.published !== 'No')
+    .sort((a, b) => b.data.date.valueOf() - a.data.date.valueOf());
+---
+
+<Layout title="Blog" description="Thoughts and tutorials.">
+	<section>
+        <h1 class="font-bold text-2xl mb-8 tracking-tight text-black">Blog</h1>
+		<div class="flex flex-col gap-2">
+			{posts.map((post) => (
+				<BlogCard post={post} />
+			))}
+		</div>
+	</section>
+</Layout>

@@ -1,0 +1,20 @@
+---
+import HeaderLink from './HeaderLink.astro';
+import site from '../data/site.json';
+---
+
+<header class="w-full mb-8 pt-8">
+	<nav class="max-w-2xl mx-auto px-4 flex items-center justify-between">
+		<a href="/" class="text-lg font-bold tracking-tight text-black hover:text-zinc-600">
+			{site.name}
+		</a>
+		<div class="flex gap-6 text-sm font-medium text-zinc-500">
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+			<HeaderLink href="/projects">Projects</HeaderLink>
+			<a href={site.github} target="_blank" class="hidden sm:block text-slate-400 hover:text-white transition-colors">
+				GitHub
+			</a>
+		</div>
+	</nav>
+</header>

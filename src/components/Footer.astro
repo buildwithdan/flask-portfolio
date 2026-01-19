@@ -1,0 +1,17 @@
+---
+import site from '../data/site.json';
+const today = new Date();
+---
+
+<footer class="w-full mt-auto py-8 text-sm text-gray-500">
+    <div class="max-w-2xl mx-auto px-4 flex flex-col sm:flex-row justify-between items-center gap-4">
+        <div>
+            &copy; {today.getFullYear()} {site.name}
+        </div>
+        <div class="flex gap-4">
+            <a href={site.twitter} target="_blank" class="hover:text-gray-300 transition-colors">Twitter</a>
+            <a href={site.github} target="_blank" class="hover:text-gray-300 transition-colors">GitHub</a>
+            <a href={site.linkedin} target="_blank" class="hover:text-gray-300 transition-colors">LinkedIn</a>
+        </div>
+    </div>
+</footer>
