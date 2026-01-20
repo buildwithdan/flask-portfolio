@@ -4,6 +4,8 @@ import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import site from '../data/site.json';
 
+import { ClientRouter } from 'astro:transitions';
+
 interface Props {
 	title?: string;
 	description?: string;
@@ -17,6 +19,7 @@ const { title = site.title, description = site.description, image } = Astro.prop
 <html lang="en">
 	<head>
 		<BaseHead title={title} description={description} image={image} />
+        <ClientRouter />
 	</head>
 	<body class="bg-zinc-50 text-zinc-900 antialiased min-h-screen flex flex-col">
 		<Header />
