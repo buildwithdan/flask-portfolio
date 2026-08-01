@@ -3,18 +3,19 @@ content%}
 <h1 class="text-secondary" align="">{{ post.title }}</h1>
 
 <p>
-  <a class="btn btn-primary" href="/blog" role="button">Back</a>
+  <a class="btn btn-primary" href="{{ url_for('posts') }}" role="button">Back</a>
   <img
-    src="https://visitor-badge.laobi.icu/badge?page_id={{ url_for('post', name=post.path.replace('posts/', '')) }}" />
+    src="https://visitor-badge.laobi.icu/badge?page_id={{ url_for('post', name=post.path.replace('blogs/', '')) }}"
+    alt="Post visitor count" />
 </p>
 
 {{ post.html|safe }}
 
-<script
+{% if blog_comments %}<script
   src="https://utteranc.es/client.js"
   repo="{{ blog_comments }}"
   issue-term="pathname"
   theme="github-light"
   crossorigin="anonymous"
-  async></script>
+  async></script>{% endif %}
 {% endblock %}
