@@ -2,10 +2,8 @@ FROM python:3.13-slim
 
 WORKDIR /flask-portfolio
 
-RUN pip install --no-cache-dir pipenv==2025.0.4
-
-COPY Pipfile Pipfile.lock ./
-RUN pipenv install --system --deploy --ignore-pipfile
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
 
 COPY . .
 
