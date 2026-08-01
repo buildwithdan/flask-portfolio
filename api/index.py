@@ -1,147 +1,198 @@
-from flask import Flask, render_template, url_for, request
-from flask_flatpages import FlatPages
-from flask_frozen import Freezer
-from datetime import datetime
+from __future__ import annotations
+
 import configparser
 import os
-import re
+from datetime import datetime, timezone
+from functools import lru_cache
+from pathlib import Path
 
-DEBUG = True
-FLATPAGES_AUTO_RELOAD = DEBUG
-FLATPAGES_EXTENSION = '.md'
-FLATPAGES_ROOT = 'content'
-DIR_BLOG_POSTS = 'blogs'
-DIR_PROJECTS = 'projects'
-
-
-app = Flask(__name__)
-flatpages = FlatPages(app)
-freezer = Freezer(app)
-app.config.from_object(__name__)
-# app.config['SERVER_NAME'] = '0.0.0.0:6000'
+from flask import Flask, Response, redirect, render_template, request, url_for
+from flask_flatpages import FlatPages
+from flask_frozen import Freezer
 
 
-# this context processors allows the below variables to be used in all templates, and you dont need to define it in each.
-@app.context_processor
-def inject_global_variables():
-    config = configparser.ConfigParser()
-    config.read('api/config.ini')
+BASE_DIR = Path(__file__).resolve().parent
+BLOG_DIRECTORY = "blogs"
+PROJECT_DIRECTORY = "projects"
+CONFIG_KEYS = (
+    "domain", "email", "your_name", "github", "blog_comments",
+    "hubspot", "linkedin", "twitter",
+)
 
-    # Access the variables in the "configs" section
-    domain = config['configs']['domain']
-    email = config['configs']['email']
-    your_name = config['configs']['your_name']
-    github = config['configs']['github']
-    blog_comments = config['configs']['blog_comments']
-    hubspot = config['configs']['hubspot']
-    linkedin = config['configs']['linkedin']
-    twitter = config['configs']['twitter']
-    current_year = datetime.now().year
 
+def _is_truthy(value: str | None) -> bool:
+    return bool(value and value.lower() in {"1", "true", "yes", "on"})
+
+
+DEBUG = _is_truthy(os.getenv("FLASK_DEBUG"))
+CONFIG_FILE = Path(os.getenv("SITE_CONFIG_PATH", BASE_DIR / "config.ini"))
+
+
+@lru_cache(maxsize=1)
+def _file_config() -> dict[str, str]:
+    parser = configparser.ConfigParser()
+    parser.read(CONFIG_FILE, encoding="utf-8")
+    return dict(parser.items("configs")) if parser.has_section("configs") else {}
+
+
+def site_config() -> dict[str, str]:
+    if DEBUG:
+        _file_config.cache_clear()
+    defaults = _file_config()
     return {
-        'domain': domain,
-        'email': email,
-        'your_name': your_name,
-        'github': github,
-        'blog_comments': blog_comments,
-        'hubspot': hubspot,
-        'linkedin': linkedin,
-        'twitter': twitter,
-        'current_year': current_year
+        key: os.getenv(f"SITE_{key.upper()}", defaults.get(key, "")).strip()
+        for key in CONFIG_KEYS
     }
 
 
-@app.route('/')
-def home():
-  return render_template("home.html")
-
-@app.route('/about')
-def about():
-  return render_template("about.html")
-
-@app.route('/resume')
-def resume():
-  return render_template("resume.html")
-
-@app.route("/blog/")
-def posts():
-    # Retrieve the posts
-    posts = [p for p in flatpages if p.path.startswith(DIR_BLOG_POSTS)]
-    # print("check1",posts)
-    
-    filtered_posts = []
-    for post in posts:
-        published_status = getattr(post, "meta").get('published')
-        # print(f"Check2 - Published status for {post.path}: {published_status}")
-        if published_status == True:
-            filtered_posts.append(post)
-    # print("check3", filtered_posts)
-    
-    # Sort the filtered posts by date
-    latest = sorted(filtered_posts, reverse=True, key=lambda p: getattr(p, "meta").get('date'))
-    # print("check4",latest)
-
-    # Render the template with the sorted posts
-    return render_template('blog.html', posts=latest)
+def published_posts(flatpages: FlatPages):
+    return [
+        page for page in flatpages
+        if page.path.startswith(f"{BLOG_DIRECTORY}/")
+        and page.meta.get("published") is True
+    ]
 
 
-@app.route('/post/<name>/')
-def post(name):
-    path = '{}/{}'.format(DIR_BLOG_POSTS, name)
-    post = flatpages.get_or_404(path)
-    return render_template('blog-post.html', post=post)
-  
-@app.route('/projects/')
-def projects():
-  projects = [p for p in flatpages if p.path.startswith(DIR_PROJECTS)]
-  # Sort the filtered posts by date
-  latest = sorted(projects, reverse=True, key=lambda p: getattr(p, "meta").get('date'))
-
-  # Render the template with the sorted projects
-  return render_template('projects.html', projects=latest)
+def newest(pages):
+    return sorted(pages, reverse=True, key=lambda page: page.meta.get("date", ""))
 
 
-# @app.route('/projects/<name>/')
-# def project(name):
-#     path = '{}/{}'.format(DIR_PROJECTS, name)
-#     project = flatpages.get_or_404(path)
-#     return render_template('projects-post.html', project=project)
+def create_app() -> Flask:
+    app = Flask(
+        __name__,
+        static_folder=BASE_DIR / "static",
+        template_folder=BASE_DIR / "templates",
+    )
+    app.config.update(
+        DEBUG=DEBUG,
+        FLATPAGES_AUTO_RELOAD=DEBUG,
+        FLATPAGES_EXTENSION=".md",
+        FLATPAGES_ROOT=str(BASE_DIR / "content"),
+    )
 
-# testing the search function for blogs
+    flatpages = FlatPages(app)
+    freezer = Freezer(app)
+    app.extensions["flatpages_instance"] = flatpages
+    app.extensions["freezer_instance"] = freezer
 
-@app.route('/blog/search', methods=['POST'])
+    @app.context_processor
+    def template_context():
+        config = site_config()
+        domain = (
+            config["domain"].removeprefix("https://")
+            .removeprefix("http://").rstrip("/")
+        )
+        canonical_url = f"https://{domain}{request.path}" if domain else request.url
+        return {
+            **config,
+            "canonical_url": canonical_url,
+            "current_year": datetime.now(timezone.utc).year,
+        }
 
-def search_blog():
-    query = request.form.get('query')
-    if not query:  # If the search query is empty
-        posts = get_latest_posts(10)  # Get the last 10 posts
-    else:
-        posts = search_posts(query)
-    return render_template('blog.html', posts=posts, query=query)
-  
-def search_posts(query):
-    """Search through all flatpage blog posts and return posts that match the query."""
-    results = []
-    
-    posts = [p for p in flatpages if p.path.startswith(DIR_BLOG_POSTS)]
-    
-    for post in posts:
-        published_status = getattr(post, "meta").get('published')
-        if published_status == True:
-            content_text = post.body
-            if query.lower() in content_text.lower():
-                results.append(post)
-    
-    return results
+    @app.after_request
+    def security_headers(response: Response):
+        response.headers.setdefault("X-Content-Type-Options", "nosniff")
+        response.headers.setdefault("Referrer-Policy", "strict-origin-when-cross-origin")
+        response.headers.setdefault(
+            "Permissions-Policy", "camera=(), microphone=(), geolocation=()"
+        )
+        response.headers.setdefault("X-Frame-Options", "SAMEORIGIN")
+        if request.is_secure or request.headers.get("X-Forwarded-Proto") == "https":
+            response.headers.setdefault(
+                "Strict-Transport-Security", "max-age=31536000; includeSubDomains"
+            )
+        return response
+
+    @app.get("/")
+    def home():
+        return render_template("home.html")
+
+    @app.get("/about")
+    def about():
+        return render_template("about.html")
+
+    @app.get("/resume")
+    def resume():
+        return redirect("https://rxresu.me/dnell.personal/danienellcom", code=302)
+
+    @app.get("/blog/")
+    def posts():
+        return render_template("blog.html", posts=newest(published_posts(flatpages)))
+
+    @app.get("/post/<name>/")
+    def post(name: str):
+        page = flatpages.get_or_404(f"{BLOG_DIRECTORY}/{name}")
+        if page.meta.get("published") is not True:
+            return app.response_class(status=404)
+        return render_template("blog-post.html", post=page)
+
+    @app.get("/projects/")
+    def projects():
+        pages = [
+            page for page in flatpages
+            if page.path.startswith(f"{PROJECT_DIRECTORY}/")
+        ]
+        return render_template("projects.html", projects=newest(pages))
+
+    @app.post("/blog/search")
+    def search_blog():
+        query = request.form.get("query", "").strip()
+        pages = published_posts(flatpages)
+        if query:
+            lowered = query.casefold()
+            pages = [
+                page for page in pages
+                if lowered in page.body.casefold()
+                or lowered in str(page.meta.get("title", "")).casefold()
+            ]
+        return render_template("blog.html", posts=newest(pages)[:10], query=query)
+
+    @app.get("/robots.txt")
+    def robots():
+        return Response(
+            f"User-agent: *\nAllow: /\nSitemap: {url_for('sitemap', _external=True)}\n",
+            mimetype="text/plain",
+        )
+
+    @app.get("/sitemap.xml")
+    def sitemap():
+        urls = [
+            url_for("home", _external=True),
+            url_for("about", _external=True),
+            url_for("projects", _external=True),
+            url_for("posts", _external=True),
+        ]
+        urls.extend(
+            url_for(
+                "post",
+                name=page.path.removeprefix(f"{BLOG_DIRECTORY}/"),
+                _external=True,
+            )
+            for page in published_posts(flatpages)
+        )
+        body = "".join(f"<url><loc>{url}</loc></url>" for url in urls)
+        return Response(
+            '<?xml version="1.0" encoding="UTF-8"?>'
+            '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
+            f"{body}</urlset>",
+            mimetype="application/xml",
+        )
+
+    return app
 
 
+app = create_app()
+flatpages: FlatPages = app.extensions["flatpages_instance"]
+freezer: Freezer = app.extensions["freezer_instance"]
 
-def get_latest_posts(limit=10):
-    """Retrieve the latest 'limit' blog posts."""
-    posts = [p for p in flatpages if p.path.startswith(DIR_BLOG_POSTS)]
-    filtered_posts = [post for post in posts if getattr(post, "meta").get('published') == True]
-    latest = sorted(filtered_posts, reverse=True, key=lambda p: getattr(p, "meta").get('date'))
-    return latest[:limit]
 
-# if __name__ == "__main__":
-#     app.run(host='0.0.0.0', port=6000)
+def search_posts(query: str):
+    lowered = query.casefold()
+    return [
+        page for page in published_posts(flatpages)
+        if lowered in page.body.casefold()
+    ]
+
+
+def get_latest_posts(limit: int = 10):
+    return newest(published_posts(flatpages))[:limit]
