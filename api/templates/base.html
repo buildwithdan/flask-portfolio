@@ -4,6 +4,13 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Danie Nell's portfolio: finance automation, Python engineering, data projects, and practical technical writing." />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="{{ canonical_url }}" />
+    <meta property="og:title" content="{{ self.title()|striptags }} | {{ your_name }}" />
+    <meta property="og:description" content="Finance automation, Python engineering, data projects, and practical technical writing." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="{{ canonical_url }}" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
@@ -17,6 +24,9 @@
     <link rel="icon" type="image/svg+xml" href="../static/images/favicon.svg" />
 
     <title>{% block title %}Home{% endblock %} | {{your_name}}</title>
+    <script type="application/ld+json">
+      {{ {"@context": "https://schema.org", "@type": "Person", "name": your_name, "url": "https://" ~ domain, "sameAs": [github, linkedin, twitter]} | tojson }}
+    </script>
     <style>
       .container-sm {
         max-width: 70%;
@@ -38,7 +48,7 @@
       <div
         class="d-flex flex-row align-items-center align-self-center"
         style="padding-top: 80px">
-        <a href="https://{{ domain }}">
+        <a href="{{ url_for('home') }}">
           <img
             src="{{ url_for('static', filename='images/headshot.jpg') }}"
             class="img-thumbnail rounded-circle"
@@ -47,7 +57,7 @@
             height="100" />
         </a>
 
-        <h1 class="p-3">{{your_name}}</h1>
+        <div class="h1 p-3">{{your_name}}</div>
         <div class="nav-line"></div>
       </div>
 
@@ -61,13 +71,13 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar">
           <div class="navbar-nav ml-auto">
-            <a href="/ " class="nav-item nav-link" id="home ">home</a>
-            <a href="https://rxresu.me/dnell.personal/danienellcom" class="nav-item nav-link" id="resume ">resume</a>
+            <a href="{{ url_for('home') }}" class="nav-item nav-link" id="home">home</a>
+            <a href="{{ url_for('resume') }}" class="nav-item nav-link" id="resume">resume</a>
             <!-- <a href="/about " class="nav-item nav-link" id="about ">about</a> -->
-            <a href="/projects " class="nav-item nav-link" id="projects "
+            <a href="{{ url_for('projects') }}" class="nav-item nav-link" id="projects"
               >projects</a
             >
-            <a href="/blog " class="nav-item nav-link" id="blog ">blog</a>
+            <a href="{{ url_for('posts') }}" class="nav-item nav-link" id="blog">blog</a>
           </div>
         </div>
       </nav>
@@ -94,14 +104,15 @@
     <script
       type="text/javascript "
       src="{{ url_for( 'static', filename='index.js' ) }} "></script>
+    <script defer src="/_vercel/insights/script.js"></script>
 
     <!-- Start of HubSpot Embed Code -->
-    <script
+    {% if hubspot %}<script
       type="text/javascript"
       id="hs-script-loader"
       async
       defer
-      src="{{hubspot}}"></script>
+      src="{{hubspot}}"></script>{% endif %}
     <!-- End of HubSpot Embed Code -->
   </body>
 </html>
