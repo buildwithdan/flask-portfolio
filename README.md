@@ -2,9 +2,9 @@
 <p align="center">
   <i>Craft your digital presence with Flask. A comprehensive portfolio template to showcase your work and insights.</i>
   <br/>
-  <img width="120" src="https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/static/images/flask.png" />
+  <img width="120" src="https://raw.githubusercontent.com/buildwithdan/flask-portfolio/main/api/static/images/flask.png" />
   <br/>
-  <b><a href="http://danienell.com">User Showcase</a></b> | <b><a href="https://hub.docker.com/r/buildwithdan/flask-portfolio">Docker Image</a></b> | <b><a href="https://github.com/buildwithdan/flask-portfolio/blob/simple/LICENSE.md">License</a></b>
+  <b><a href="https://danienell.com">User Showcase</a></b> | <b><a href="https://hub.docker.com/r/buildwithdan/flask-portfolio">Docker Image</a></b> | <b><a href="https://github.com/buildwithdan/flask-portfolio/blob/main/LICENSE.md">License</a></b>
   <br/><br/>
   <a href="https://visitor-badge.laobi.icu/badge?page_id=buildwithdan.flask-portfolio">
     <img src="https://visitor-badge.laobi.icu/badge?page_id=buildwithdan.flask-portfolio" alt="Visitor Badge">
@@ -12,7 +12,7 @@
   <!-- <a href="https://vercel.com/new/clone?repository-url=https://github.com/buildwithdan/flask-portfolio">
     <img src="https://vercel.com/button" alt="Deploy with Vercel"> -->
   </a>
-  <a href="https://github.com/buildwithdan/flask-portfolio/blob/simple/LICENSE.md">
+  <a href="https://github.com/buildwithdan/flask-portfolio/blob/main/LICENSE.md">
     <img src="https://img.shields.io/badge/License-MIT-0aa8d2?logo=opensourceinitiative&logoColor=fff" alt="License MIT">
   </a>
   <a href="https://hub.docker.com/r/buildwithdan/flask-portfolio">
@@ -55,24 +55,24 @@ By populating this file, you enable the automatic update of the entire Flask app
 
 Utilize the provided templates for creating content:
 
-- [Blog post template](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/blogs)
-- [Project post template](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/content/projects)
+- [Blog post template](https://github.com/buildwithdan/flask-portfolio/tree/main/api/content/blogs)
+- [Project post template](https://github.com/buildwithdan/flask-portfolio/tree/main/api/content/projects)
 
 For assistance with markdown syntax, visit [Markdown Live Preview](https://markdownlivepreview.com/).
 
 ### Blog Post Structure
-[Example Here](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/content/blogs/Blog-1.md?token=GHSAT0AAAAAACAGIQ5MGJYUPQFFRHX2RDR6ZBLBG7A)
+[Example Here](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/main/api/content/blogs/Blog-1.md?token=GHSAT0AAAAAACAGIQ5MGJYUPQFFRHX2RDR6ZBLBG7A)
 
 ### Activating Blog Comments
 
 1. Create a new public repo named `my-blog-comments`.
-2. Enter `YourGithubName/my-blog-comments` inside [Config.ini](https://github.com/buildwithdan/flask-portfolio/tree/simple/api/config.ini).
+2. Enter `YourGithubName/my-blog-comments` inside [Config.ini](https://github.com/buildwithdan/flask-portfolio/tree/main/api/config.ini).
 3. Test your first post which will prompt you to install the app, directing it to your `my-blog-comments` repo.
 
 > Credit: [https://utteranc.es/](https://utteranc.es/)
 
 ### Project Post Structure
-[Example Here](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/simple/api/content/projects/project-1.md?token=GHSAT0AAAAAACAGIQ5MPUJGDAFDBRJUIJXYZBLBGOQ)
+[Example Here](https://raw.githubusercontent.com/buildwithdan/flask-portfolio/main/api/content/projects/project-1.md?token=GHSAT0AAAAAACAGIQ5MPUJGDAFDBRJUIJXYZBLBGOQ)
 
 ## 🚀 Local Development
 
@@ -125,4 +125,4 @@ For detailed Docker CLI info, [refer to the official documentation](https://docs
 
 ## 🍴 Cloning / Forking
 
-Kindly consult the [license](https://github.com/buildwithdan/flask-portfolio/blob/simple/LICENSE.md) and erase all personal details (resume, blog entries, images, etc.) from your cloned/forked version.
+Kindly consult the [license](https://github.com/buildwithdan/flask-portfolio/blob/main/LICENSE.md) and erase all personal details (resume, blog entries, images, etc.) from your cloned/forked version.
