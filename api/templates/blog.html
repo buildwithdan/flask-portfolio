@@ -12,7 +12,7 @@
 </p>
 
 <div class="mt-3">
-  <form action="/blog/search" method="post">
+  <form action="{{ url_for('search_blog') }}" method="post">
     <div class="input-group">
       <input
         type="text"
